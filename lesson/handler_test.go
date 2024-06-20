@@ -1,4 +1,4 @@
-package handler
+package lesson
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ import (
 const (
 	mainURL          = "http://localhost:8000"
 	pathStart        = "/start"
-	pathQuery        = "/test"
+	pathTest         = "/test"
 	singleQuery      = "?name=aril"
 	doubleQuery      = "?name=aril&age=10"
 	multiValuesQuery = "?name=Fakhril&name=Ainur"
@@ -47,7 +47,7 @@ func SayHi(w http.ResponseWriter, r *http.Request) {
 }
 
 func TestQuerySayHi(t *testing.T) {
-	req := httptest.NewRequest(http.MethodGet, mainURL+pathQuery+doubleQuery, nil)
+	req := httptest.NewRequest(http.MethodGet, mainURL+pathTest+doubleQuery, nil)
 	rec := httptest.NewRecorder()
 
 	SayHi(rec, req)
@@ -66,7 +66,7 @@ func MultipleParamValues(w http.ResponseWriter, r *http.Request) {
 }
 
 func TestMultiParamValues(t *testing.T) {
-	req := httptest.NewRequest(http.MethodGet, mainURL+pathQuery+multiValuesQuery, nil)
+	req := httptest.NewRequest(http.MethodGet, mainURL+pathTest+multiValuesQuery, nil)
 	rec := httptest.NewRecorder()
 
 	MultipleParamValues(rec, req)
