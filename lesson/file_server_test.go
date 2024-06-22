@@ -2,7 +2,6 @@ package lesson
 
 import (
 	"embed"
-	_ "embed"
 	"io/fs"
 	"net/http"
 	"testing"
