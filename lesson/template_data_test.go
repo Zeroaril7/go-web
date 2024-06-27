@@ -10,8 +10,8 @@ import (
 )
 
 func TemplateDataMap(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles("./templates/data.gohtml"))
-	t.ExecuteTemplate(w, "data.gohtml", map[string]interface{}{
+	t := template.Must(template.ParseFiles("./templates/data.html"))
+	t.ExecuteTemplate(w, "data.html", map[string]interface{}{
 		"Title": "Template Data Map",
 		"Name":  "Zero",
 		"UserInfo": map[string]interface{}{
@@ -44,8 +44,8 @@ type PageInfo struct {
 }
 
 func TemplateDataStruct(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles("./templates/data.gohtml"))
-	t.ExecuteTemplate(w, "data.gohtml", PageInfo{
+	t := template.Must(template.ParseFiles("./templates/data.html"))
+	t.ExecuteTemplate(w, "data.html", PageInfo{
 		Title: "Template Data Struct",
 		Name:  "Zero",
 		UserInfo: UserInfo{

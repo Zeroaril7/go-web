@@ -36,9 +36,9 @@ func TestSimpleHTML(t *testing.T) {
 }
 
 func SimpleHTMLFile(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFiles("./templates/simple.gohtml"))
+	t := template.Must(template.ParseFiles("./templates/simple.html"))
 
-	t.ExecuteTemplate(w, "simple.gohtml", "Halo")
+	t.ExecuteTemplate(w, "simple.html", "Halo")
 }
 
 func TestSimpleHTMLFile(t *testing.T) {
@@ -53,9 +53,9 @@ func TestSimpleHTMLFile(t *testing.T) {
 }
 
 func TemplateDir(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseGlob("./templates/*.gohtml"))
+	t := template.Must(template.ParseGlob("./templates/*.html"))
 
-	t.ExecuteTemplate(w, "simple.gohtml", "Hai simple HTML Template")
+	t.ExecuteTemplate(w, "simple.html", "Hai simple HTML Template")
 }
 
 func TestTemplateDir(t *testing.T) {
@@ -69,13 +69,13 @@ func TestTemplateDir(t *testing.T) {
 	fmt.Println(string(body))
 }
 
-//go:embed templates/*.gohtml
+//go:embed templates/*.html
 var templateFS embed.FS
 
 func TemplateEmbed(w http.ResponseWriter, r *http.Request) {
-	t := template.Must(template.ParseFS(templateFS, "templates/*.gohtml"))
+	t := template.Must(template.ParseFS(templateFS, "templates/*.html"))
 
-	t.ExecuteTemplate(w, "simple.gohtml", "Hai Embed Template")
+	t.ExecuteTemplate(w, "simple.html", "Hai Embed Template")
 }
 
 func TestTemplateEmbed(t *testing.T) {

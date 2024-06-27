@@ -13,7 +13,6 @@ func ServeFile(w http.ResponseWriter, r *http.Request) {
 	switch typeFile {
 	case "html":
 		http.ServeFile(w, r, "./src/index.html")
-		break
 	case "js":
 		http.ServeFile(w, r, "./src/index.js")
 	default:
@@ -44,7 +43,6 @@ func ServeFileEmbed(w http.ResponseWriter, r *http.Request) {
 	switch typeFile {
 	case "html":
 		fmt.Fprint(w, html)
-		break
 	case "js":
 		fmt.Fprint(w, js)
 	default:
