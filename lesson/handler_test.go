@@ -13,6 +13,7 @@ const (
 	mainURL          = "http://localhost:8000"
 	pathStart        = "/start"
 	pathTest         = "/test"
+	pathUpload       = "/upload"
 	singleQuery      = "?name=aril"
 	doubleQuery      = "?name=aril&age=10"
 	multiValuesQuery = "?name=Fakhril&name=Ainur"
